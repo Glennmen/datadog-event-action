@@ -25,4 +25,4 @@ curl  -X POST -H "Content-type: application/json" \
       "alert_type": "'"${EVENT_ALERT_TYPE}"'",
       "source_type_name": "GITHUB"
 }' \
-"https://api.datadoghq.com/api/v1/events?api_key=${DATADOG_API_KEY}"
+"https://api.datadoghq.eu/api/v1/events?api_key=${DATADOG_API_KEY}"
