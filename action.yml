@@ -1,0 +1,33 @@
+name: 'DataDog Event Trigger'
+description: 'Trigger DataDog Events from GitHub Actions'
+author: 'Glennmen'
+branding:
+  icon: bell
+  color: purple
+inputs:
+  datadog_api_key:
+    description: 'Your Datadog API key'
+    required: true
+  event_title:
+    description: 'The title of the event'
+    required: true
+  event_text:
+    description: 'The text of the event'
+    required: true
+  event_priority:
+    description: 'Event priority, Can be one of normal or low. Default: normal'
+    required: false
+  event_tags:
+    description: 'optional, see README for more information'
+    required: false
+  event_alert_type:
+    description: 'Event alert type, Can be one of error, warning, info, or success. Default: info'
+    required: false
+  datadog_us:
+    description: 'Use the Datadog US endpoint. Default: EU endpoint'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    DATADOG_API_KEY: ${{ inputs.datadog_api_key }}
