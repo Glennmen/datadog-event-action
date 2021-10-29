@@ -18,7 +18,7 @@ fi
 
 if [ "$DATADOG_US" = true ]; then
   # error, warning, info, and success.
-  endpoint="https://api.datadoghq.us"
+  endpoint="https://api.datadoghq.com"
 else
   endpoint="https://api.datadoghq.eu"
 fi
