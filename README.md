@@ -2,6 +2,10 @@
 
 A GitHub Action that triggers DataDog Events.
 
+## Credit
+
+Heavily based on [jordan-simonovski/datadog-event-action](https://github.com/jordan-simonovski/datadog-event-action) :heart:
+
 ## Usage
 
 ```
