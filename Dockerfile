@@ -1,4 +1,4 @@
-FROM debian:9.6-slim
+FROM debian:11.1-slim
 
 LABEL "com.github.actions.name"="DataDog Event Trigger"
 LABEL "com.github.actions.description"="Trigger DataDog Events from GitHub Actions"
