@@ -16,6 +16,13 @@ if [[ -z "$EVENT_ALERT_TYPE" ]]; then
   EVENT_ALERT_TYPE="info"
 fi
 
+if [ "$DATADOG_US" = true ]; then
+  # error, warning, info, and success.
+  endpoint="https://api.datadoghq.us"
+else
+  endpoint="https://api.datadoghq.eu"
+fi
+
 curl  -X POST -H "Content-type: application/json" \
 -d '{
       "title": "'"${EVENT_TITLE}"'",
@@ -25,4 +32,4 @@ curl  -X POST -H "Content-type: application/json" \
       "alert_type": "'"${EVENT_ALERT_TYPE}"'",
       "source_type_name": "GITHUB"
 }' \
-"https://api.datadoghq.eu/api/v1/events?api_key=${DATADOG_API_KEY}"
+"${endpoint}/api/v1/events?api_key=${DATADOG_API_KEY}"
