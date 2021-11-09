@@ -1,16 +1,7 @@
-FROM debian:11.1-slim
+FROM alpine:3.14.2
 
-LABEL "com.github.actions.name"="DataDog Event Trigger"
-LABEL "com.github.actions.description"="Trigger DataDog Events from GitHub Actions"
-LABEL "com.github.actions.icon"="hash"
-LABEL "com.github.actions.color"="gray-dark"
+RUN apk add --no-cache curl
 
-LABEL version="1.0.0"
-LABEL repository="https://github.com/jordan-simonovski/datadog-event-action"
-LABEL homepage="https://github.com/jordan-simonovski/datadog-event-action"
-LABEL maintainer="Jordan Simonovski <jordan.simonovski@gmail.com>"
+COPY entrypoint.sh /entrypoint.sh
 
-RUN apt-get update && apt-get install -y curl
-
-ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
