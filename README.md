@@ -10,14 +10,15 @@ Heavily based on [jordan-simonovski/datadog-event-action](https://github.com/jor
 
 ```
 - name: DataDog Event
-  uses: jordan-simonovski/datadog-event-action@1.0.3
-  env:
-    DATADOG_API_KEY: ${{ secrets.DD_API_KEY }}
-    EVENT_TITLE: Build Succeeded
-    EVENT_TEXT: We did it! 🎉
-    EVENT_PRIORITY: (Can be one of normal or low. Default: normal)
-    EVENT_TAGS: (optional)
-    EVENT_ALERT_TYPE: (Can be one of error, warning, info, or success. Default: info)
+  uses: Glennmen/datadog-event-action@1.1.0
+  with:
+    datadog_api_key: ${{ secrets.DD_API_KEY }}
+    event_title: Build Succeeded
+    event_text: We did it! 🎉
+    event_priority: (Can be one of normal or low. Default: normal)
+    event_tags: (optional)
+    event_alert_type: (Can be one of error, warning, info, or success. Default: info)
+    datadog_us: false
 ```
 
 ### Event Tags
@@ -26,5 +27,15 @@ Event Tags should be an array of different key/value pairs.
 
 Example:
 ```
-EVENT_TAGS: "['app:test','env:production']"
+event_tags: "['app:test','env:production']"
+```
+
+### Datadog endpoint
+
+By default this action will send events to the Datadog EU endpoint.
+This can be overriden to send events to the Datadog US endpoint.
+
+Example:
+```
+datadog_us: true
 ```
