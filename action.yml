@@ -1,4 +1,4 @@
-name: 'DataDog Event Trigger'
+name: 'DataDog Event Action'
 description: 'Trigger DataDog Events from GitHub Actions'
 author: 'Glennmen'
 branding:
