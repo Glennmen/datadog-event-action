@@ -31,3 +31,9 @@ runs:
   image: 'Dockerfile'
   env:
     DATADOG_API_KEY: ${{ inputs.datadog_api_key }}
+    EVENT_TITLE: ${{ inputs.event_title }}
+    EVENT_TEXT: ${{ inputs.event_text }}
+    EVENT_PRIORITY: ${{ inputs.event_priority }}
+    EVENT_TAGS: ${{ inputs.event_tags }}
+    EVENT_ALERT_TYPE: ${{ inputs.event_alert_type }}
+    DATADOG_US: ${{ inputs.datadog_us }}
