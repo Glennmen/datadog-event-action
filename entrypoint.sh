@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 set -e
 
 if [[ -z "$DATADOG_API_KEY" || -z "$EVENT_TITLE" || -z "$EVENT_TEXT" ]]; then
